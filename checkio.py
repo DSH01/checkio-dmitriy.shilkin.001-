@@ -21,3 +21,19 @@ def checkio(data):
 		return True
 	else:
 		return False
+	
+#3
+def checkio(text: str) -> str:
+	all = {}
+	for letter in text.lower():
+		if letter.isalpha():
+			if letter not in all:
+				all[letter] = 1
+			else:
+				all[letter] += 1
+	maxvalue = max(all.values())
+	finalall = []
+	for it in all.items():
+		if it[1] == maxvalue:
+			finalall.append(it[0])
+	return sorted(finalall)[0][0]
