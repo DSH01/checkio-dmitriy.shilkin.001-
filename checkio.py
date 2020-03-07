@@ -5,6 +5,7 @@ def all_the_same(elements: List[Any]) -> bool:
             return False
     return True
 
+
 #2 House Password
 def checkio(data):
 	up, low, integer, leng = 0, 0, 0, 0
@@ -21,6 +22,7 @@ def checkio(data):
 		return True
 	else:
 		return False
+	
 	
 #3 The Most Wanted Letter
 def checkio(text: str) -> str:
