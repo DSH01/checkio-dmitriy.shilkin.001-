@@ -47,3 +47,7 @@ def time_converter(time):
     d = datetime.datetime.strptime(time, "%H:%M").strftime("%I:%M %p").lower()
     d = "{}{}.{}.".format(int(d[:2]), d[2:-1], d[-1])
     return d
+
+# 5 Non-unique Elements
+def checkio(data: list) -> list:
+    return [nonunique for nonunique in data if data.count(nonunique)>1]
