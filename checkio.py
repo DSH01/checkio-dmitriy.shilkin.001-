@@ -58,3 +58,13 @@ def frequency_sort(items):
     hmap = {k:items.count(k) for k in items}
     tierList = {k: v for k, v in sorted(hmap.items(), key=lambda item: item[1], reverse=True)}
     return [k for k, v in tierList.items() for i in range(v)]
+
+# 7 Flatten a List
+def flat_list(array): 
+    n = []
+    for i in array:
+         if isinstance(i, list):
+             n = n + flat_list(i)
+         else:
+             n.append(i)
+    return n
