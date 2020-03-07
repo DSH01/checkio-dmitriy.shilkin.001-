@@ -1,11 +1,11 @@
-#1 
+#1 All the Same
 def all_the_same(elements: List[Any]) -> bool:
     for it in range(len(elements) - 1):
         if elements[it] != elements[it+1]:
             return False
     return True
 
-#2 
+#2 House Password
 def checkio(data):
 	up, low, integer, leng = 0, 0, 0, 0
 	for symbol in data:
@@ -22,7 +22,7 @@ def checkio(data):
 	else:
 		return False
 	
-#3
+#3 The Most Wanted Letter
 def checkio(text: str) -> str:
 	all = {}
 	for letter in text.lower():
@@ -37,3 +37,11 @@ def checkio(text: str) -> str:
 		if it[1] == maxvalue:
 			finalall.append(it[0])
 	return sorted(finalall)[0][0]
+
+
+# 4 Time Converter (24h to 12h)
+import datetime
+def time_converter(time):
+    d = datetime.datetime.strptime(time, "%H:%M").strftime("%I:%M %p").lower()
+    d = "{}{}.{}.".format(int(d[:2]), d[2:-1], d[-1])
+    return d
