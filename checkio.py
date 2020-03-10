@@ -80,3 +80,10 @@ def long_repeat(line: str) -> int:
             data[-1][1] += 1
     data.sort(key = lambda x: x[1], reverse=True)
     return data[0][1]
+
+# 9 Sun Angle
+def sun_angle(time):
+    h, m = time.split(":")
+    ntime = int(h) * 60 + int(m)
+    if  1080 >= ntime >= 360: return (ntime - 360) /4
+    else: return "I don't see the sun!"
