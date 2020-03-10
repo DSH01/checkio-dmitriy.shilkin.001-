@@ -87,3 +87,18 @@ def sun_angle(time):
     ntime = int(h) * 60 + int(m)
     if  1080 >= ntime >= 360: return (ntime - 360) /4
     else: return "I don't see the sun!"
+
+# 10 Bird Language
+def translate(phrase):
+    words = phrase.split()
+    newwords = []
+    for word in words:
+        c = 0
+        while c < len(word):
+            if word[c] in "aeiouy":
+                word = word[:c+1] + word[c+3:]
+            else:
+                word = word[:c+1] + word[c+2:]
+            c += 1
+        newwords.append(word)
+    return " ".join(newwords)
