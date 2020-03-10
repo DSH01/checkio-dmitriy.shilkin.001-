@@ -68,3 +68,15 @@ def flat_list(array):
          else:
              n.append(i)
     return n
+
+# 8 Long Repeat
+def long_repeat(line: str) -> int:
+    if len(line) == 0: return 0
+    data = [[line[0], 1]]
+    for i in range(1, len(line)):
+        if line[i] != line[i-1]:
+            data.append([line[i], 1])
+        else:
+            data[-1][1] += 1
+    data.sort(key = lambda x: x[1], reverse=True)
+    return data[0][1]
