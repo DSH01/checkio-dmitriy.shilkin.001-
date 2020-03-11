@@ -102,3 +102,13 @@ def translate(phrase):
             c += 1
         newwords.append(word)
     return " ".join(newwords)
+
+# 11 Pawn Brotherhood
+def safe_pawns(pawns: set) -> int:
+    res, alph = 0, " abcdefghi"
+    for el in pawns:
+        def1 = '{}{}'.format(alph[alph.index(el[0]) - 1], int(el[1]) - 1)
+        def2 = '{}{}'.format(alph[alph.index(el[0]) + 1], int(el[1]) - 1)
+        if def1 in pawns or def2 in pawns:
+            res += 1
+    return res
