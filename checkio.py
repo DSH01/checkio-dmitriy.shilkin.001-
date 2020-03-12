@@ -141,3 +141,10 @@ def fight(unit_1, unit_2):
         if not unit_2.is_alive: return True
         unit_1.hp -= unit_2.at
         if not unit_1.is_alive: return False
+
+# 14 Restricted Sum
+res = 0
+def checkio(data):
+    global res
+    exec("global res; res = " + '+'.join(map(str, data)))
+    return res
