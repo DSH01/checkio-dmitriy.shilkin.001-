@@ -125,3 +125,19 @@ def checkio(game_result: List[str]) -> str:
         elif game_result[0][2] == game_result[1][1] == game_result[2][0]:
             return game_result[0][2]
     return "D"
+# 13 Warriors
+class Warrior:
+    hp, at = 50, 5
+    @property
+    def is_alive(self):
+        return self.hp > 0
+        
+class Knight(Warrior):
+    at = 7
+    
+def fight(unit_1, unit_2):
+    while True:
+        unit_2.hp -= unit_1.at
+        if not unit_2.is_alive: return True
+        unit_1.hp -= unit_2.at
+        if not unit_1.is_alive: return False
