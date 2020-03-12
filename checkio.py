@@ -112,3 +112,16 @@ def safe_pawns(pawns: set) -> int:
         if def1 in pawns or def2 in pawns:
             res += 1
     return res
+
+# 12 Xs and Os Referee
+def checkio(game_result: List[str]) -> str:
+    for i in range(3):
+        if game_result[i][0] == game_result[i][1] == game_result[i][2]:
+            return game_result[i][0]
+        elif game_result[0][i] == game_result[1][i] == game_result[2][i]:
+            return game_result[0][i]
+        elif game_result[0][0] == game_result[1][1] == game_result[2][2]:
+            return game_result[0][0]
+        elif game_result[0][2] == game_result[1][1] == game_result[2][0]:
+            return game_result[0][2]
+    return "D"
