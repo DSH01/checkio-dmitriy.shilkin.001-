@@ -148,3 +148,17 @@ def checkio(data):
     global res
     exec("global res; res = " + '+'.join(map(str, data)))
     return res
+
+# 15 Count Consecutive Summers
+def count_consecutive_summers(num):
+    start, res = 0, 0
+    numbers = [i for i in range(1, num+1)]
+    while start < num:
+        for i in range(1, num + 1):
+            if sum(numbers[start:start+i]) == num:
+                res += 1
+                start += 1
+            elif sum(numbers[start:start+i]) > num:
+                start += 1
+                break
+    return res
