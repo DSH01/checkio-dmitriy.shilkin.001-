@@ -1,3 +1,5 @@
+# Home
+
 #1 All the Same
 def all_the_same(elements: List[Any]) -> bool:
     for it in range(len(elements) - 1):
@@ -162,3 +164,13 @@ def count_consecutive_summers(num):
                 start += 1
                 break
     return res
+
+
+# O Reily
+
+# 16 Median
+def checkio(data):
+    newdata, leng = sorted(data), len(data)
+    if leng % 2 == 0:
+        return (newdata[int(leng/2)] + newdata[int(leng/2 - 1)])/2
+    return newdata[int(leng/2)]
