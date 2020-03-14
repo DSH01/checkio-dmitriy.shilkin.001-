@@ -174,3 +174,25 @@ def checkio(data):
     if leng % 2 == 0:
         return (newdata[int(leng/2)] + newdata[int(leng/2 - 1)])/2
     return newdata[int(leng/2)]
+
+# 17 How to Find Friends
+def check_connection(network, first, second):
+    connections = [p.split("-") for p in network]
+    allFriends = []
+    nextToCheck = [first]
+    while len(nextToCheck) > 0:
+        tmpl = []
+        connToRemove = []
+        for ch in nextToCheck:
+            for pair in connections:
+                if ch in pair:
+                    tmpl.append(pair[pair.index(ch) - 1])
+                    connToRemove.append(pair)
+            for p in connToRemove:
+                try: 
+                    connections.remove(p)
+                except ValueError:
+                    pass
+        nextToCheck = tmpl
+        allFriends += nextToCheck
+    return True if second in allFriends else False
