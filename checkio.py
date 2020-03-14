@@ -166,7 +166,7 @@ def count_consecutive_summers(num):
     return res
 
 
-# O Reily
+# O Reilly
 
 # 16 Median
 def checkio(data):
