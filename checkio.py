@@ -196,3 +196,16 @@ def check_connection(network, first, second):
         nextToCheck = tmpl
         allFriends += nextToCheck
     return True if second in allFriends else False
+
+# 18 Cipher Map
+import numpy as np
+def recall_password(cipher_grille, ciphered_password):
+    grille = np.array([list(l) for l in cipher_grille])
+    res = ''
+    for i in range(4):
+        for (gl, pl) in zip(grille, ciphered_password):
+            for g, p in zip(gl, pl):
+                if g == "X":
+                    res += p
+        grille = np.rot90(grille, k=-1)
+    return res
